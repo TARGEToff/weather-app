@@ -1,3 +1,6 @@
+/*eslint no-undef: "off"*/
+require("dotenv").config();
+
 module.exports = {
     reactStrictMode: true,
 
@@ -6,6 +9,6 @@ module.exports = {
     },
 
     env: {
-        apiKey: "33c3b46503814bfbb81195107211208"
+        apiKey: `${process.env.API_KEY}`
     }
 };

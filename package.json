@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "clsx": "^1.1.1",
+    "dotenv": "^10.0.0",
     "formik": "^2.2.9",
     "next": "11.0.1",
     "prettier": "^2.3.2",

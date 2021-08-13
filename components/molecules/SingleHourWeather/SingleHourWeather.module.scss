@@ -5,7 +5,62 @@
     background: linear-gradient(330deg, rgba(0,0,0,1) 0%, rgba(82,82,82,1) 100%);
     box-shadow: 0 0 5px 1px #777;
     border-radius: 10px;
+    width: 45rem;
+    height: 10rem;
     padding: 5px;
-    margin: 5px;
+    margin-bottom: 25px;
     color: white;
+
+    .details {
+        display: grid;
+        grid-template-columns: 1.1fr 5fr 1fr;
+        align-items: center;
+        width: 95%;
+        margin-top: -15px;
+
+        .detailsText {
+            display: grid;
+            grid-template-rows: 20px 20px;
+        }
+    }
+}
+
+@media (min-width: 416px) and (max-width: 470px) { 
+
+    .SingleHourWeather {
+        width: 40rem;
+
+        .details {
+            width: 95%;
+            grid-template-columns: 1.2fr 5fr 1fr;
+            margin-top: -10px;
+        }
+    }
+
+}
+
+@media (min-width: 371px) and (max-width: 415px) { 
+
+    .SingleHourWeather {
+        width: 35rem;
+
+        .details {
+            width: 95%;
+            grid-template-columns: 1.5fr 5fr 1fr;
+            margin-top: -10px;
+        }
+    }
+}
+
+@media (min-width: 0px) and (max-width: 370px) { 
+
+    .SingleHourWeather {
+        width: 30rem;
+
+        .details {
+            width: 95%;
+            grid-template-columns: 1.9fr 5fr 1fr;
+            margin-top: -10px;
+        }
+    }
 }

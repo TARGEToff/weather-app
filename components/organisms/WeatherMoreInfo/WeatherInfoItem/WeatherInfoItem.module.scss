@@ -1,0 +1,14 @@
+.wrapper {
+    background: linear-gradient(330deg, rgba(0,0,0,1) 0%, rgba(82,82,82,1) 100%);
+    box-shadow: 0 0 5px 1px #777;
+    color: white;
+    padding: 10px 5px 5px 5px;
+    width: 120px;
+    height: 90px;
+    margin: 5px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

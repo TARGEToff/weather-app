@@ -1,20 +1,33 @@
-import React from 'react';
-import styles from './CurrentWeather.module.scss';
-import Image from 'next/image';
+import React from "react";
+import styles from "./CurrentWeather.module.scss";
+import Image from "next/image";
+import Paragraph from "components/atoms/Paragraph/Paragraph";
+import Heading from "components/atoms/Heading/Heading";
 
-const CurrentWeather = ({ weather }) => (
-    <div className={styles.currentWeather}> 
-        <Image
-            src={`https:${weather.current.condition.icon}`}
-            alt="Current weather icon"
-            width={64}
-            height={64}
-        />
-        <p>{weather.location.name}, {weather.location.country}</p> 
-        <p>{weather.current.condition.text}</p>
-        <p>temperature: {weather.current.temp_c}°C</p>
-        <p>perceived temperature: {weather.current.feelslike_c}°C</p>
-    </div>
-);
+
+const CurrentWeather = ({ weather }) => {
+
+    const weatherIcon = weather.current.condition.icon.replace(/64/g, "128");
+
+    return(
+        <div className={styles.currentWeather}>
+            <Paragraph isBig={true}>
+                {weather.location.name}, {weather.location.country}
+            </Paragraph>
+            <div className={styles.details}>
+                <Image
+                    src={`https:${weatherIcon}`}
+                    alt="Current weather icon"
+                    width={128}
+                    height={128}
+                />
+                <Heading>{weather.current.temp_c}°C</Heading>
+            </div>
+            <Paragraph isBig={true}>{weather.current.condition.text}</Paragraph>
+
+        </div>
+    );
+ 
+};
 
 export default CurrentWeather;

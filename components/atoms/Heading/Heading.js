@@ -13,7 +13,7 @@ Heading.propTypes = {
 };
 
 Heading.defaultProps = {
-    isBig: true,
+    isBig: false,
 };
 
 export default Heading;

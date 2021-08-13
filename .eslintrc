@@ -3,7 +3,8 @@
         "next", 
         "next/core-web-vitals", 
         "eslint:recommended",
-        "plugin:react/recommended"
+        "plugin:react/recommended",
+        "prettier"
     ],
 
     "env": {
@@ -19,7 +20,8 @@
 		"sourceType": "module"
 	},
 	"plugins": [
-		"react"
+		"react",
+        "prettier"
 	],
 	"rules": {
 		"indent": [

@@ -26,7 +26,7 @@ export default function Home() {
             .then((response) => response.json())
             .then((response) => {
                 setWeather(response);
-                console.log(response);
+                // console.log(response);
             });
     };
 

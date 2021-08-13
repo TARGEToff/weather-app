@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useFormik } from "formik";
 import styles from "styles/Home.module.scss";
-import config from "config.json";
 import Heading from "components/atoms/Heading/Heading";
 import WeatherForecast from "components/organisms/WeatherForecast/WeatherForecast";
 import CurrentWeather from "components/molecules/CurrentWeather/CurrentWeather";
@@ -12,6 +11,8 @@ import searchLoupe from "public/loupe.svg";
 import geoSvg from "public/gps.svg";
 import Paragraph from "components/atoms/Paragraph/Paragraph";
 
+const apiKey = process.env.apiKey;
+
 export default function Home() {
     let [weather, setWeather] = useState();
     let [geoSupport, setGeoSupport] = useState(true);
@@ -19,7 +20,7 @@ export default function Home() {
 
     const getWeather = (city) => {
         fetch(
-            `https://api.weatherapi.com/v1/forecast.json?key=${config.apiKey}&q=${city}&days=2`
+            `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=2`
         )
             .then((response) => response.json())
             .then((response) => {

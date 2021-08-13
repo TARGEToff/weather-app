@@ -11,6 +11,7 @@ import searchLoupe from "public/loupe.svg";
 import geoSvg from "public/gps.svg";
 import Paragraph from "components/atoms/Paragraph/Paragraph";
 
+/*eslint no-undef: "off"*/
 const apiKey = process.env.apiKey;
 
 export default function Home() {

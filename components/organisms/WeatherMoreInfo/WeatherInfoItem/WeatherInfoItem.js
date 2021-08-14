@@ -9,7 +9,7 @@ const WeatherInfoItem = ({ imageSource, type, unit }) => {
     return (
         <div className={styles.wrapper}>
             <Image alt="weather" width={38} height={38} src={imageSource} />
-            { unit ? <Paragraph>{`${weather.current[type]} ${unit}`}</Paragraph> : <Paragraph>{weather.current[type]}</Paragraph>}
+            <Paragraph>{ unit ? `${weather.current[type]} ${unit}` : `${weather.current[type]}`}</Paragraph>
         </div>
     );
 };

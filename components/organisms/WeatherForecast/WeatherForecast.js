@@ -5,35 +5,32 @@ import SingleHourWeather from "components/molecules/SingleHourWeather/SingleHour
 import clsx from "clsx";
 
 const WeatherForecast = () => {
-    let [forecastVisibility, setForecastVisibility] = useState("today");
-
-    let forecastResult;
-    forecastVisibility === "today" ? forecastResult = 1 : forecastResult = 0;
+    const [forecastVisibility, setForecastVisibility] = useState(0);
 
     return (
         <div className={styles.weatherForecast}>
             <div className={styles.forecastNavbar}>
                 <button
                     className={clsx(styles.button, {
-                        [styles.active]: forecastVisibility === "today",
+                        [styles.active]: forecastVisibility === 0,
                     })}
-                    onClick={() => setForecastVisibility("today")}
+                    onClick={() => setForecastVisibility(0)}
                 >
                     <Paragraph>Today</Paragraph>
                 </button>
                 <button
                     className={clsx(styles.button, {
-                        [styles.active]: forecastVisibility === "tomorrow",
+                        [styles.active]: forecastVisibility === 1,
                     })}
-                    onClick={() => setForecastVisibility("tomorrow")}
+                    onClick={() => setForecastVisibility(1)}
                 >
                     <Paragraph>Tomorrow</Paragraph>
                 </button>
             </div>
             <div className={styles.forecast}>
-                <SingleHourWeather day={forecastResult} hour={6} />
-                <SingleHourWeather day={forecastResult} hour={12} />
-                <SingleHourWeather day={forecastResult} hour={18} />
+                <SingleHourWeather day={forecastVisibility} hour={6} />
+                <SingleHourWeather day={forecastVisibility} hour={12} />
+                <SingleHourWeather day={forecastVisibility} hour={18} />
             </div>
         </div>
     );

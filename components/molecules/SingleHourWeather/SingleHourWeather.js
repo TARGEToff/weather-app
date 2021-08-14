@@ -20,7 +20,7 @@ const SingleHourWeather = ({ day, hour }) => (
                         <Paragraph>{weather.forecast.forecastday[day].hour[hour].condition.text}</Paragraph>
                         <Paragraph>{weather.forecast.forecastday[day].hour[hour].wind_kph} kph</Paragraph>
                     </div>
-                    <Paragraph isBig={true}>
+                    <Paragraph isBig>
                         {weather.forecast.forecastday[day].hour[hour].temp_c}°C
                     </Paragraph>
                 </div>

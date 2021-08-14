@@ -11,7 +11,7 @@ const CurrentWeather = ({ weather }) => {
 
     return(
         <div className={styles.currentWeather}>
-            <Paragraph isBig={true}>
+            <Paragraph isBig>
                 {weather.location.name}, {weather.location.country}
             </Paragraph>
             <div className={styles.details}>
@@ -23,7 +23,7 @@ const CurrentWeather = ({ weather }) => {
                 />
                 <Heading>{weather.current.temp_c}°C</Heading>
             </div>
-            <Paragraph isBig={true}>{weather.current.condition.text}</Paragraph>
+            <Paragraph isBig>{weather.current.condition.text}</Paragraph>
 
         </div>
     );

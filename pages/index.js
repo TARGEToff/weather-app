@@ -78,7 +78,7 @@ export default function Home() {
 
     return (
         <div className={styles.wrapper}>
-            <Heading isBig={true}>Weather</Heading>
+            <Heading isBig>Weather</Heading>
             <div className={styles.form}>
                 <form onSubmit={formik.handleSubmit}>
                     <input
@@ -108,8 +108,8 @@ export default function Home() {
                     />
                 </button>
             </div>
-            { geoSupport ? null : <Paragraph isBig={true}>Your browser don&apos;t support geolocation</Paragraph> }
-            { geoError ? <Paragraph isBig={true}>Unable to get localization</Paragraph> : null }
+            { geoSupport ? null : <Paragraph isBig>Your browser don&apos;t support geolocation</Paragraph> }
+            { geoError ? <Paragraph isBig>Unable to get localization</Paragraph> : null }
             <Paragraph>{formik.errors.city}</Paragraph>
 
             <div className={styles.weather}>

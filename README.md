@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This app is mine first project that i did without any tutorials/courses etc. App includes current weather with additonal information and 2 days forecast which are fetched from [weathrapi](https://www.weatherapi.com/).
+This app is mine first project that i did without any tutorials/courses etc. App includes current weather with additonal information and 2 days forecast which are fetched from [weatherapi](https://www.weatherapi.com/).
 
 ## Tech used
 

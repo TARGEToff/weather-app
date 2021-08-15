@@ -22,7 +22,7 @@ export default function Home() {
 
     const getWeather = (city) => {
         fetch(
-            `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}6&q=${city}&days=2`
+            `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=2`
         )
             .then((response) => { 
                 if (!response.ok) {

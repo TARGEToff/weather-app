@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./CurrentWeather.module.scss";
 import Image from "next/image";
-import Paragraph from "components/atoms/Paragraph/Paragraph";
-import Heading from "components/atoms/Heading/Heading";
+import { Paragraph } from "components/atoms/Paragraph/Paragraph";
+import { Heading } from "components/atoms/Heading/Heading";
 
 
 const CurrentWeather = ({ weather }) => {
@@ -30,4 +30,4 @@ const CurrentWeather = ({ weather }) => {
  
 };
 
-export default CurrentWeather;
+export { CurrentWeather };

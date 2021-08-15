@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "./WeatherMoreInfo.module.scss";
-import Paragraph from "components/atoms/Paragraph/Paragraph";
+import { Paragraph } from "components/atoms/Paragraph/Paragraph";
 import Humidity from "public/humidity.svg";
 import Gauge from "public/gauge.svg";
 import WindDirection from "public/wind-direction.svg";
 import WindVane from "public/wind-vane.svg";
-import WeatherInfoItem from "./WeatherInfoItem/WeatherInfoItem";
+import { WeatherInfoItem } from "./WeatherInfoItem/WeatherInfoItem";
 
 const WeatherMoreInfo = () => (
     <div className={styles.moreInfo}>
@@ -23,4 +23,4 @@ const WeatherMoreInfo = () => (
     </div>
 );
 
-export default WeatherMoreInfo;
+export { WeatherMoreInfo };

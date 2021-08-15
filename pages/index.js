@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { useFormik } from "formik";
 import styles from "styles/Home.module.scss";
-import Heading from "components/atoms/Heading/Heading";
-import WeatherForecast from "components/organisms/WeatherForecast/WeatherForecast";
-import CurrentWeather from "components/molecules/CurrentWeather/CurrentWeather";
-import WeatherMoreInfo from "components/organisms/WeatherMoreInfo/WeatherMoreInfo";
-import weatherContext from "context";
+import { Heading } from "components/atoms/Heading/Heading";
+import { WeatherForecast } from "components/organisms/WeatherForecast/WeatherForecast";
+import { CurrentWeather } from "components/molecules/CurrentWeather/CurrentWeather";
+import { WeatherMoreInfo } from "components/organisms/WeatherMoreInfo/WeatherMoreInfo";
+import { weatherContext } from "context";
 import Image from "next/image";
 import searchLoupe from "public/loupe.svg";
 import geoSvg from "public/gps.svg";
-import Paragraph from "components/atoms/Paragraph/Paragraph";
+import { Paragraph } from "components/atoms/Paragraph/Paragraph";
 
 /*eslint no-undef: "off"*/
 const apiKey = process.env.apiKey;

@@ -12,4 +12,4 @@ Heading.propTypes = {
     isBig: PropTypes.bool,
 };
 
-export default Heading;
+export { Heading };

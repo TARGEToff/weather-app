@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import Image from "next/image";
 import styles from './WeatherInfoItem.module.scss';
-import Paragraph from 'components/atoms/Paragraph/Paragraph';
-import weatherContext from "context";
+import { Paragraph } from 'components/atoms/Paragraph/Paragraph';
+import { weatherContext } from "context";
 
 const WeatherInfoItem = ({ imageSource, type, unit }) => {
     const weather = useContext(weatherContext);
@@ -14,4 +14,4 @@ const WeatherInfoItem = ({ imageSource, type, unit }) => {
     );
 };
 
-export default WeatherInfoItem;
+export { WeatherInfoItem };

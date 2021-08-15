@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import Image from "next/image";
 import styles from "./SingleHourWeather.module.scss";
-import Paragraph from "components/atoms/Paragraph/Paragraph";
-import weatherContext from "context";
+import { Paragraph } from "components/atoms/Paragraph/Paragraph";
+import { weatherContext } from "context";
 
 const SingleHourWeather = ({ day, hour }) => {
     const weather = useContext(weatherContext);
@@ -28,4 +28,4 @@ const SingleHourWeather = ({ day, hour }) => {
     );
 };
 
-export default SingleHourWeather;
+export { SingleHourWeather };

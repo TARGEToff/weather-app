@@ -16,4 +16,4 @@ Paragraph.propTypes = {
     isBig: PropTypes.bool,
 };
 
-export default Paragraph;
+export { Paragraph };

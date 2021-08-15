@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./WeatherForecast.module.scss";
-import Paragraph from "components/atoms/Paragraph/Paragraph";
-import SingleHourWeather from "components/molecules/SingleHourWeather/SingleHourWeather";
+import { Paragraph } from "components/atoms/Paragraph/Paragraph";
+import { SingleHourWeather } from "components/molecules/SingleHourWeather/SingleHourWeather";
 import clsx from "clsx";
 
 const WeatherForecast = () => {
@@ -36,4 +36,4 @@ const WeatherForecast = () => {
     );
 };
 
-export default WeatherForecast;
+export { WeatherForecast };

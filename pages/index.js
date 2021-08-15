@@ -116,25 +116,21 @@ export default function Home() {
                     />
                 </button>
             </div>
-            { geoSupport ? null : <Paragraph isBig>Your browser don&apos;t support geolocation</Paragraph> }
-            { geoError ? <Paragraph isBig>Unable to get localization</Paragraph> : null }
-            { anyError ? <Paragraph isBig>An error occurred, please try again or reload the page</Paragraph> : null }
+            { geoSupport && <Paragraph isBig>Your browser don&apos;t support geolocation</Paragraph> }
+            { geoError && <Paragraph isBig>Unable to get localization</Paragraph> }
+            { anyError && <Paragraph isBig>An error occurred, please try again or reload the page</Paragraph> }
             <Paragraph>{formik.errors.city}</Paragraph>
 
             <div className={styles.weather}>
-                {weather ? (
+                {weather && weather.current && (
                     <>
-                        {weather.current ? 
-                            <>
-                                <CurrentWeather weather={weather} />
-                                <weatherContext.Provider value={weather}>
-                                    <WeatherForecast />
-                                    <WeatherMoreInfo />
-                                </weatherContext.Provider>
-                            </>
-                            : null}
+                        <CurrentWeather weather={weather} />
+                        <weatherContext.Provider value={weather}>
+                            <WeatherForecast />
+                            <WeatherMoreInfo />
+                        </weatherContext.Provider>
                     </>
-                ) : null}
+                )}
             </div>
         </div>
     );

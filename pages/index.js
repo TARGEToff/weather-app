@@ -33,6 +33,7 @@ export default function Home() {
             })
             .then((response) => {
                 setWeather(response);
+                setAnyError(false);
                 // console.log(response);
             });
 

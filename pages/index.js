@@ -15,19 +15,27 @@ import Paragraph from "components/atoms/Paragraph/Paragraph";
 const apiKey = process.env.apiKey;
 
 export default function Home() {
-    let [weather, setWeather] = useState();
-    let [geoSupport, setGeoSupport] = useState(true);
-    let [geoError, setGeoError] = useState(false);
+    const [weather, setWeather] = useState();
+    const [geoSupport, setGeoSupport] = useState(true);
+    const [geoError, setGeoError] = useState(false);
+    const [anyError, setAnyError] = useState(false);
 
     const getWeather = (city) => {
         fetch(
-            `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=2`
+            `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}6&q=${city}&days=2`
         )
-            .then((response) => response.json())
+            .then((response) => { 
+                if (!response.ok) {
+                    setAnyError(true);
+                    throw new Error(response.error);
+                }
+                return response.json();
+            })
             .then((response) => {
                 setWeather(response);
                 // console.log(response);
             });
+
     };
 
     const getGeo = () => {
@@ -110,6 +118,7 @@ export default function Home() {
             </div>
             { geoSupport ? null : <Paragraph isBig>Your browser don&apos;t support geolocation</Paragraph> }
             { geoError ? <Paragraph isBig>Unable to get localization</Paragraph> : null }
+            { anyError ? <Paragraph isBig>An error occurred, please try again or reload the page</Paragraph> : null }
             <Paragraph>{formik.errors.city}</Paragraph>
 
             <div className={styles.weather}>

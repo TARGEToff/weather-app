@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useFormik } from "formik";
+import * as Yup from "yup";
 import styles from "styles/Home.module.scss";
 import { Heading } from "components/atoms/Heading/Heading";
 import { WeatherForecast } from "components/organisms/WeatherForecast/WeatherForecast";
@@ -24,7 +25,7 @@ export default function Home() {
         fetch(
             `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=2`
         )
-            .then((response) => { 
+            .then((response) => {
                 if (!response.ok) {
                     setAnyError(true);
                     throw new Error(response.error);
@@ -36,7 +37,6 @@ export default function Home() {
                 setAnyError(false);
                 // console.log(response);
             });
-
     };
 
     const getGeo = () => {
@@ -59,26 +59,18 @@ export default function Home() {
         }
     };
 
-    const validate = (values) => {
-        const errors = {};
-
-        if (!values.city) {
-            errors.city = "City field is required";
-        }
-        if (values.city.length > 20) {
-            errors.city = "Too many characters";
-        }
-        if (values.city.length < 3) {
-            errors.city = "Not enough characters";
-        }
-        return errors;
-    };
+    const validationSchema = Yup.object().shape({
+        city: Yup.string()
+            .min(3, "Not enough characters")
+            .max(20, "Too many characters")
+            .required("City field is required"),
+    });
 
     const formik = useFormik({
         initialValues: {
             city: "",
         },
-        validate,
+        validationSchema,
         onSubmit: (values) => {
             getWeather(values.city);
             formik.resetForm();
@@ -117,9 +109,19 @@ export default function Home() {
                     />
                 </button>
             </div>
-            { !geoSupport && <Paragraph isBig>Your browser don&apos;t support geolocation</Paragraph> }
-            { geoError && <Paragraph isBig>Unable to get localization</Paragraph> }
-            { anyError && <Paragraph isBig>An error occurred, please try again or reload the page</Paragraph> }
+            {!geoSupport && (
+                <Paragraph isBig>
+                    Your browser don&apos;t support geolocation
+                </Paragraph>
+            )}
+            {geoError && (
+                <Paragraph isBig>Unable to get localization</Paragraph>
+            )}
+            {anyError && (
+                <Paragraph isBig>
+                    An error occurred, please try again or reload the page
+                </Paragraph>
+            )}
             <Paragraph>{formik.errors.city}</Paragraph>
 
             <div className={styles.weather}>

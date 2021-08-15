@@ -2,10 +2,10 @@ import React, { useContext } from 'react';
 import Image from "next/image";
 import styles from './WeatherInfoItem.module.scss';
 import { Paragraph } from 'components/atoms/Paragraph/Paragraph';
-import { weatherContext } from "context";
+import { WeatherContext } from "context";
 
 const WeatherInfoItem = ({ imageSource, type, unit }) => {
-    const weather = useContext(weatherContext);
+    const weather = useContext(WeatherContext);
     return (
         <div className={styles.wrapper}>
             <Image alt="weather" width={38} height={38} src={imageSource} />

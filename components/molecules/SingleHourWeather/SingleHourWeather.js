@@ -2,10 +2,10 @@ import React, { useContext } from "react";
 import Image from "next/image";
 import styles from "./SingleHourWeather.module.scss";
 import { Paragraph } from "components/atoms/Paragraph/Paragraph";
-import { weatherContext } from "context";
+import { WeatherContext } from "context";
 
 const SingleHourWeather = ({ day, hour }) => {
-    const weather = useContext(weatherContext);
+    const weather = useContext(WeatherContext);
     return (
         <div className={styles.SingleHourWeather}>
             <Paragraph>{hour}:00</Paragraph>

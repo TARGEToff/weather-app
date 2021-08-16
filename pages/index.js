@@ -6,7 +6,7 @@ import { Heading } from "components/atoms/Heading/Heading";
 import { WeatherForecast } from "components/organisms/WeatherForecast/WeatherForecast";
 import { CurrentWeather } from "components/molecules/CurrentWeather/CurrentWeather";
 import { WeatherMoreInfo } from "components/organisms/WeatherMoreInfo/WeatherMoreInfo";
-import { weatherContext } from "context";
+import { WeatherContext } from "context";
 import Image from "next/image";
 import searchLoupe from "public/loupe.svg";
 import geoSvg from "public/gps.svg";
@@ -118,10 +118,10 @@ export default function Home() {
                 {weather && weather.current && (
                     <>
                         <CurrentWeather weather={weather} />
-                        <weatherContext.Provider value={weather}>
+                        <WeatherContext.Provider value={weather}>
                             <WeatherForecast />
                             <WeatherMoreInfo />
-                        </weatherContext.Provider>
+                        </WeatherContext.Provider>
                     </>
                 )}
             </div>
